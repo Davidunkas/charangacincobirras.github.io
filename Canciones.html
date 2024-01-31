@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charanga Cinco Birras</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="JavaScript.js">
+    <link rel="icon" href="logo.png">
+</head>
+<body class="web">
+
+    <header>
+        <h1 class="titulo">Charanga Cinco Birras</h1>
+        <a href="Inicio.html"><img class="logofoot" src="logo.png" alt=""></a>
+    </header>
+
+    <nav>
+        <a id="inicio" href="Inicio.html">Inicio</a>
+        <a id="somos" href="Quiénes somos.html">Quiénes Somos</a>
+        <a id="calendario" href="Calendario.html">Calendario</a>
+        <a id="canciones" class="activa" href="Canciones.html">Canciones</a>
+        <a id="contacto" href="Contacto.html">Contacto</a>
+    </nav>
+
+    <div class="canciones-container">
+        <h2>Repertorio de Charanga Cinco Birras</h2>
+        <ul class="canciones-lista">
+            <li>Marcha Nupcial - Felix Mendelssohn</li>
+            <li>La Cucaracha (Versión Charanga)</li>
+            <li>El Rey - Juan Carlos Baglietto</li>
+            <li>Suavemente - Elvis Crespo</li>
+            <li>La Bomba - Azul Azul</li>
+            <li>Vivir mi Vida - Marc Anthony</li>
+            <li>Bailando - Enrique Iglesias ft. Gente de Zona</li>
+            <li>Que Bonito - Rosario Flores</li>
+            <li>Vivir lo Nuestro - Marc Anthony y La India</li>
+            <li>La Bamba - Ritchie Valens</li>
+            <li>Mambo No. 5 - Lou Bega</li>
+            <li>Cielito Lindo (Versión Charanga)</li>
+            <li>Guantanamera (Versión Charanga)</li>
+            <li>Darte un Beso - Prince Royce</li>
+            <li>Que Manera de Quererte - Gilberto Santa Rosa</li>
+            <li>La Murga - Willie Colón</li>
+            <li>Tequila - The Champs</li>
+            <li>Volare - Gipsy Kings</li>
+            <li>Oye Como Va - Santana</li>
+            <li>Aquellos Ojos Verdes (Versión Charanga)</li>
+        </ul>
+    </div>
+
+
+
+    <div class="video-container">
+        <h2>Videos de Charanga Cinco Birras</h2>
+        
+        <!-- Video 1 -->
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="amaral.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h3>Amaral-Remix</h3>
+
+        <!-- Video 2 -->
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="ay mama.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h3>Ay mamá-Rigoberta Bandini</h3>
+    </div>
+
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Charanga Cinco Birras. Todos los derechos reservados.</p>
+        <a href="Inicio.html"><img class="logofoot" src="logo.png" alt=""></a>
+        <div class="redes-sociales">
+            <ul class="redes-sociales-lista">
+                <li><a href="https://www.facebook.com/profile.php?id=100070693083425" target="_blank"><img src="facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://www.instagram.com/charangacincobirras/" target="_blank"><img src="instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.youtube.com/@charangacincobirras" target="_blank"><img src="youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("inicio").addEventListener("mouseenter", () => {
+            document.getElementById("canciones").style.backgroundColor = "#800080";
+            document.getElementById("canciones").style.color = "white";
+        });
+        document.getElementById("inicio").addEventListener("mouseleave", () => {
+            document.getElementById("canciones").style.backgroundColor = "white";
+            document.getElementById("canciones").style.color = "black";
+        });
+
+
+        document.getElementById("somos").addEventListener("mouseenter", () => {
+            document.getElementById("canciones").style.backgroundColor = "#800080";
+            document.getElementById("canciones").style.color = "white";
+        });
+        document.getElementById("somos").addEventListener("mouseleave", () => {
+            document.getElementById("canciones").style.backgroundColor = "white";
+            document.getElementById("canciones").style.color = "black";
+        });
+
+
+        document.getElementById("calendario").addEventListener("mouseenter", () => {
+            document.getElementById("canciones").style.backgroundColor = "#800080";
+            document.getElementById("canciones").style.color = "white";
+        });
+        document.getElementById("calendario").addEventListener("mouseleave", () => {
+            document.getElementById("canciones").style.backgroundColor = "white";
+            document.getElementById("canciones").style.color = "black";
+        });
+
+
+        document.getElementById("contacto").addEventListener("mouseenter", () => {
+            document.getElementById("canciones").style.backgroundColor = "#800080";
+            document.getElementById("canciones").style.color = "white";
+        });
+        document.getElementById("contacto").addEventListener("mouseleave", () => {
+            document.getElementById("canciones").style.backgroundColor = "white";
+            document.getElementById("canciones").style.color = "black";
+        });
+    </script>
+
+</body>
+</html>

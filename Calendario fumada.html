@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charanga Cinco Birras</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="JavaScript.js">
+    <link rel="icon" href="logo.png">
+</head>
+<body class="web">
+ 
+    <header>
+        <h1 class="titulo">Charanga Cinco Birras</h1>
+        <a href="Inicio.html"><img class="logofoot" src="logo.png" alt=""></a>
+    </header>
+
+    <nav>
+        <a id="inicio" href="Inicio.html">Inicio</a>
+        <a id="somos" href="Quiénes somos.html">Quiénes Somos</a>
+        <a id="calendario" class="activa" href="Calendario.html">Calendario</a>
+        <a id="canciones" href="Canciones.html">Canciones</a>
+        <a id="contacto" href="Contacto.html">Contacto</a>
+    </nav>
+
+    <h2 class="titulocalendario">Calendario Interactivo</h2>
+
+    <div id="calendario" class="calendario">
+        <div class="navigation">
+            <button class="flecha" id="prevMonth">&lt;</button>
+            <h2 id="currentMonthYear"></h2>
+            <button class="flecha" id="nextMonth">&gt;</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Charanga Cinco Birras. Todos los derechos reservados.</p>
+        <a href="Inicio.html"><img class="logofoot" src="logo.png" alt=""></a>
+        <div class="redes-sociales">
+            <ul class="redes-sociales-lista">
+                <li><a href="https://www.facebook.com/profile.php?id=100070693083425" target="_blank"><img src="facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://www.instagram.com/charangacincobirras/" target="_blank"><img src="instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.youtube.com/@charangacincobirras" target="_blank"><img src="youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById("inicio").addEventListener("mouseenter", () => {
+            document.getElementById("calendario").style.backgroundColor = "#800080";
+            document.getElementById("calendario").style.color = "white";
+        });
+        document.getElementById("inicio").addEventListener("mouseleave", () => {
+            document.getElementById("calendario").style.backgroundColor = "white";
+            document.getElementById("calendario").style.color = "black";
+        });
+
+
+        document.getElementById("somos").addEventListener("mouseenter", () => {
+            document.getElementById("calendario").style.backgroundColor = "#800080";
+            document.getElementById("calendario").style.color = "white";
+        });
+        document.getElementById("somos").addEventListener("mouseleave", () => {
+            document.getElementById("calendario").style.backgroundColor = "white";
+            document.getElementById("calendario").style.color = "black";
+        });
+
+
+        document.getElementById("canciones").addEventListener("mouseenter", () => {
+            document.getElementById("calendario").style.backgroundColor = "#800080";
+            document.getElementById("calendario").style.color = "white";
+        });
+        document.getElementById("canciones").addEventListener("mouseleave", () => {
+            document.getElementById("calendario").style.backgroundColor = "white";
+            document.getElementById("calendario").style.color = "black";
+        });
+
+
+        document.getElementById("contacto").addEventListener("mouseenter", () => {
+            document.getElementById("calendario").style.backgroundColor = "#800080";
+            document.getElementById("calendario").style.color = "white";
+        });
+        document.getElementById("contacto").addEventListener("mouseleave", () => {
+            document.getElementById("calendario").style.backgroundColor = "white";
+            document.getElementById("calendario").style.color = "black";
+        });
+    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const calendarBody = document.querySelector('#calendario tbody');
+        const currentMonthYearElement = document.getElementById('currentMonthYear');
+        const prevMonthButton = document.getElementById('prevMonth');
+        const nextMonthButton = document.getElementById('nextMonth');
+
+        let currentYear = 2024;
+        let currentMonth = 0;
+
+        function getLastDayOfMonth(year, month) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+
+        function createCalendar(year, month) {
+            calendarBody.innerHTML = '';
+
+            const firstDay = new Date(year, month, 0).getDay();
+            const lastDay = getLastDayOfMonth(year, month);
+            let dayCounter = 1;
+
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
+
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement('td');
+                    const dayIndex = (j + 6 - firstDay) % 7; // Ajustar el índice para empezar en el día correcto
+
+                    if ((i === 0 && j < firstDay) || dayCounter > lastDay) {
+                        cell.textContent = '';
+                    } else {
+                        cell.textContent = dayCounter;
+                        cell.addEventListener('click', function () {
+                            this.classList.toggle('marked');
+                        });
+                        dayCounter++;
+                    }
+
+                    row.appendChild(cell);
+                }
+
+                calendarBody.appendChild(row);
+            }
+
+            currentMonthYearElement.textContent = `${getMonthName(month)} ${year}`;
+        }
+
+        function getMonthName(month) {
+            const months = [
+                'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+            ];
+            return months[month];
+        }
+
+        function updateCalendar() {
+            createCalendar(currentYear, currentMonth);
+        }
+
+        function goToPrevMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            updateCalendar();
+        }
+
+        function goToNextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            updateCalendar();
+        }
+
+        prevMonthButton.addEventListener('click', goToPrevMonth);
+        nextMonthButton.addEventListener('click', goToNextMonth);
+
+        updateCalendar();
+    });
+</script>
+
+
+</body>
+</html>

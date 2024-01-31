@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head class="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charanga Cinco Birras</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="JavaScript.js">
+    <link rel="icon" href="logo.png">
+</head>
+<body class="web">
+    
+    <header>
+        <h1 class="titulo">Charanga Cinco Birras</h1>
+        <a href="Inicio.html"><img class="logofoot" src="logo.png" alt=""></a>
+    </header>
+
+    <nav>
+        <a id="inicio" href="Inicio.html">Inicio</a>
+        <a id="somos" href="Quiénes somos.html">Quiénes Somos</a>
+        <a id="calendario" href="Calendario.html">Calendario</a>
+        <a id="canciones" href="Canciones.html">Canciones</a>
+        <a id="contacto" class="activa" href="Contacto.html">Contacto</a>
+    </nav>
+
+<h2 class="contrato">Contacto para contratos e Información:</h2>
+<form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="cp">Código Postal:</label>
+    <input type="text" id="cp" name="cp" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+    <input type="submit" value="Enviar">
+</form>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Charanga Cinco Birras. Todos los derechos reservados.</p>
+        <a href="Inicio.html"><img class="logofoot" src="logo.png" alt=""></a>
+        <div class="redes-sociales">
+            <ul class="redes-sociales-lista">
+                <li><a href="https://www.facebook.com/profile.php?id=100070693083425" target="_blank"><img src="facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://www.instagram.com/charangacincobirras/" target="_blank"><img src="instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.youtube.com/@charangacincobirras" target="_blank"><img src="youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById("inicio").addEventListener("mouseenter", () => {
+            document.getElementById("contacto").style.backgroundColor = "#800080";
+            document.getElementById("contacto").style.color = "white";
+        });
+        document.getElementById("inicio").addEventListener("mouseleave", () => {
+            document.getElementById("contacto").style.backgroundColor = "white";
+            document.getElementById("contacto").style.color = "black";
+        });
+
+
+        document.getElementById("somos").addEventListener("mouseenter", () => {
+            document.getElementById("contacto").style.backgroundColor = "#800080";
+            document.getElementById("contacto").style.color = "white";
+        });
+        document.getElementById("somos").addEventListener("mouseleave", () => {
+            document.getElementById("contacto").style.backgroundColor = "white";
+            document.getElementById("contacto").style.color = "black";
+        });
+
+
+        document.getElementById("calendario").addEventListener("mouseenter", () => {
+            document.getElementById("contacto").style.backgroundColor = "#800080";
+            document.getElementById("contacto").style.color = "white";
+        });
+        document.getElementById("calendario").addEventListener("mouseleave", () => {
+            document.getElementById("contacto").style.backgroundColor = "white";
+            document.getElementById("contacto").style.color = "black";
+        });
+
+
+        document.getElementById("canciones").addEventListener("mouseenter", () => {
+            document.getElementById("contacto").style.backgroundColor = "#800080";
+            document.getElementById("contacto").style.color = "white";
+        });
+        document.getElementById("canciones").addEventListener("mouseleave", () => {
+            document.getElementById("contacto").style.backgroundColor = "white";
+            document.getElementById("contacto").style.color = "black";
+        });
+    </script>
+
+</body>
+</html>
